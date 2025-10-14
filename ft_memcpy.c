@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 11:11:52 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/14 11:11:56 by mguilber         ###   ########.fr       */
+/*   Created: 2025/10/14 11:13:55 by mguilber          #+#    #+#             */
+/*   Updated: 2025/10/14 11:13:57 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void *ft_bzero(void *s, int n){
-	int i;
-	char *str;
-	i = 0;
-	str = (unsigned char*)s;
-	while(i <= n){
-		str[i] = '\0';
-		i++;
-	}
-	return(s);
-}
 #include <stdio.h>
 #include <string.h>
+
+void *ft_memcpy(void *dest, const void *src, int n){
+	int i = 0;
+	unsigned char *des;
+	unsigned char *sr;
+
+	des = (unsigned char*)dest;
+	sr = (unsigned char*)src;
+
+	while(i < n){
+		des[i] = sr[i];
+		i++;
+	}
+	return(des);
+}
+
 int main(){
-	char s[11] = "hello world";
-	char c[11] = "hola mundo";
-	printf("%s\n", s);
-	printf("%s\n", c);
-	bzero(s, 2);
-	ft_bzero(c, 7);
-	printf("%s\n", s);
-	printf("%s", c);
+	char src[12] = "h-e-l-l-o";
+	char dest[12] = "fhsdhf";
+	char dddd[12] = "";
+	memcpy(&src[3], &src[4], 9);
+	printf("%s\n", src);
+	ft_memcpy(dddd, src, 2);
+	printf("%s\n", dddd);
 }
