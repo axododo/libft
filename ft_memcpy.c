@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
-
-void *ft_memcpy(void *dest, const void *src, int n){
+#include <stdlib.h>
+void *ft_memcpy(void *dest, const void *src, size_t n){
 	int i = 0;
 	unsigned char *des;
 	unsigned char *sr;
@@ -33,6 +33,6 @@ int main(){
 	char dddd[12] = "";
 	memcpy(&src[3], &src[4], 9);
 	printf("%s\n", src);
-	ft_memcpy(dddd, src, 2);
-	printf("%s\n", dddd);
+	ft_memcpy(&src[3], &src[4], 4);
+	printf("%s\n", src);
 }

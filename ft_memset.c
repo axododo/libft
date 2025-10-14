@@ -9,8 +9,8 @@
 /*   Updated: 2025/10/14 11:13:09 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void *ft_memset(void *str, int c, int n){
+#include <stdlib.h>
+void *ft_memset(void *str, int c, size_t n){
   int i = 0;
   char *st;
   st = (unsigned char*)str;

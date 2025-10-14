@@ -9,8 +9,8 @@
 /*   Updated: 2025/10/14 11:11:56 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void *ft_bzero(void *s, int n){
+#include <stdlib.h>
+void *ft_bzero(void *s, size_t n){
 	int i;
 	char *str;
 	i = 0;
