@@ -1,7 +1,7 @@
 void *ft_memset(char *str, int c, int n){
   int i = 0;
-  while (str[i] <= n) {
-    str[i] = c + 32;
+  while (i <= n) {
+    str[i] = c;
     i++;
   }
   return(str);
@@ -10,8 +10,8 @@ void *ft_memset(char *str, int c, int n){
 #include "stdio.h"
 #include "string.h"
 int main() {
-  char *str = "hello world";
-  printf("%s\n", ft_memset(str, 7, 7));
-  printf("%s\n", memset(str, 5, 0));
+  char str[12];
+  printf("%s\n", ft_memset(str, 88, 7));
+  printf("%s\n", memset(str, 88, 7));
   return 0;
 }
