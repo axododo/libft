@@ -28,11 +28,11 @@ void *ft_memcpy(void *dest, const void *src, size_t n){
 }
 
 int main(){
-	char src[12] = "h-e-l-l-o";
+	char src[12] = "hello zorld";
 	char dest[12] = "fhsdhf";
 	char dddd[12] = "";
-	memcpy(&src[3], &src[4], 9);
+	memcpy(&src[3], &src[4], 5);
 	printf("%s\n", src);
-	ft_memcpy(&src[3], &src[4], 4);
+	ft_memcpy(&src[3], &src[4], 5);
 	printf("%s\n", src);
 }

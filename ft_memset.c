@@ -18,7 +18,7 @@ void *ft_memset(void *str, int c, size_t n){
     st[i] = c;
     i++;
   }
-  st[i] = '\0';
+  //st[i] = '\0';
   return(st);
 }
 
@@ -27,10 +27,14 @@ void *ft_memset(void *str, int c, size_t n){
 int main() {
   char str[12];
   char cc[12];
-  ft_memset(str, 88 ,7);
+
+
+  memset(cc, 87 ,12);
+  printf("ft %s\n", cc);
+
+
+  
+  ft_memset(str, 88, 12);
   printf("%s\n", str);
-  /*printf("%s\n", ft_memset(str, 88, 7));*/
-  memset(cc, 88, 7);
-  printf("%s\n", cc);
   return 0;
 }
