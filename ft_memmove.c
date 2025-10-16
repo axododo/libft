@@ -38,10 +38,10 @@ void *ft_memmove(void *dest, const void *src, size_t n){
 
 int main(/*int ac, char **av*/){
 	printf("ft_memmove\n");
-        unsigned char tab[] = "hell";
+        unsigned char tab[] = "hejhgsdajgjgsdakgsdall";
         unsigned char dest = tab[1];
-        unsigned char src = tab[2];
-        size_t size = 2;
+        unsigned char src = tab[5];
+        size_t size = 12;
         ft_memmove(&dest, &src, size);
         printf("%s\n", &tab[0]);
         
