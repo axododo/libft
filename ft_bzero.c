@@ -12,10 +12,13 @@
 #include <stdlib.h>
 void *ft_bzero(void *s, size_t n){
 	int i;
-	char *str;
+	char unsigned *str;
+	int j;
+
+	j = n;
 	i = 0;
 	str = (unsigned char*)s;
-	while(i <= n){
+	while(i <= j){
 		str[i] = '\0';
 		i++;
 	}
@@ -24,7 +27,7 @@ void *ft_bzero(void *s, size_t n){
 #include <stdio.h>
 #include <string.h>
 int main(){
-	char s[11] = "hello world";
+	char s[11] = "heo world";
 	char c[11] = "hola mundo";
 	printf("%s\n", s);
 	printf("%s\n", c);

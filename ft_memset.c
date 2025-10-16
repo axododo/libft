@@ -11,10 +11,14 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 void *ft_memset(void *str, int c, size_t n){
-  int i = 0;
-  char *st;
+  int i;
+  int j;
+
+  j = n;
+  i = 0;
+  char unsigned *st;
   st = (unsigned char*)str;
-  while (i < n) {
+  while (i < j) {
     st[i] = c;
     i++;
   }
@@ -33,7 +37,7 @@ int main() {
   printf("ft %s\n", cc);
 
 
-  
+
   ft_memset(str, 88, 12);
   printf("%s\n", str);
   return 0;
