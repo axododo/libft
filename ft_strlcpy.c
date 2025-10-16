@@ -29,7 +29,7 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size){
   dst[i] = '\0';
   return(len);
 }
-
+/*
 int main() {
   char src[10] = "hello";
   char dest[10];
@@ -41,3 +41,4 @@ int main() {
   printf("%s\n", dest1);
   return 0;
 }
+*/
