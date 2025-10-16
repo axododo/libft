@@ -9,9 +9,7 @@
 /*   Updated: 2025/10/14 11:13:57 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 void *ft_memcpy(void *dest, const void *src, size_t n){
 	int i;
 	int j;
@@ -29,7 +27,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n){
 	}
 	return(des);
 }
-
+/*
 int main(){
 	char src[12] = "hello zorld";
 	memcpy(&src[3], &src[4], 5);
@@ -37,3 +35,4 @@ int main(){
 	ft_memcpy(&src[3], &src[4], 5);
 	printf("%s\n", src);
 }
+*/

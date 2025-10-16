@@ -9,8 +9,7 @@
 /*   Updated: 2025/10/16 14:55:38 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 char *ft_strchr(const char *s, int c){
 	int i;
 	int j;
@@ -28,8 +27,9 @@ char *ft_strchr(const char *s, int c){
 	else
 		return(NULL);
 }
-
+/*
 int main(){
 	printf("%s", ft_strchr("helloo", 'a'));
 	printf("%s", strchr("helloo", 'a'));
 }
+*/

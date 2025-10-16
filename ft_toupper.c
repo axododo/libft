@@ -9,8 +9,7 @@
 /*   Updated: 2025/10/16 14:42:53 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 int ft_toupper(int c){
 	if(c >= 'a' && c <= 'z'){
 		c -= 32;

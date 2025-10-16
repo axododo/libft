@@ -9,8 +9,7 @@
 /*   Updated: 2025/10/16 15:27:34 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 void *ft_memchr(const void *s, int c, size_t n){
 	int i;
 
@@ -23,7 +22,9 @@ void *ft_memchr(const void *s, int c, size_t n){
 	else
 		return(NULL);
 }
+/*
 int main(){
 	char s[12] = "lorem ipsum";
 	printf("%uz\n", ft_memchr(s, 'm', 15));
 }
+*/

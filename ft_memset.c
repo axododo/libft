@@ -9,7 +9,7 @@
 /*   Updated: 2025/10/14 11:13:09 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 void *ft_memset(void *str, int c, size_t n){
   int i;
   int j;
@@ -26,8 +26,7 @@ void *ft_memset(void *str, int c, size_t n){
   return(st);
 }
 
-#include "stdio.h"
-#include "string.h"
+/*
 int main() {
   char str[12];
   char cc[12];
@@ -42,3 +41,4 @@ int main() {
   printf("%s\n", str);
   return 0;
 }
+*/

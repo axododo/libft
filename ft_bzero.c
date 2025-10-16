@@ -9,7 +9,7 @@
 /*   Updated: 2025/10/14 11:11:56 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 void *ft_bzero(void *s, size_t n){
 	int i;
 	char unsigned *str;
@@ -24,8 +24,7 @@ void *ft_bzero(void *s, size_t n){
 	}
 	return(s);
 }
-#include <stdio.h>
-#include <string.h>
+/*
 int main(){
 	char s[11] = "heo world";
 	char c[11] = "hola mundo";
@@ -36,3 +35,4 @@ int main(){
 	printf("%s\n", s);
 	printf("%s", c);
 }
+*/
