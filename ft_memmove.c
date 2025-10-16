@@ -11,42 +11,44 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memmove(void *dest, const void *src, size_t n){
-	size_t i;
-	unsigned char *sr;
-	unsigned char *des;
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*sr;
+	unsigned char	*des;
 
 	i = 0;
-	des = (unsigned char*)dest;
-	sr = (unsigned char*)src;
-	while (i < n){
-
-		if (des > sr){
+	des = (unsigned char *)dest;
+	sr = (unsigned char *)src;
+	while (i < n)
+	{
+		if (des > sr)
+		{
 			des[i + n - 1] = sr[i + n - 1];
 		}
 		else
 			des[i] = sr[i];
 		i++;
 	}
-	return(des);
+	return (des);
 }
 
-
 /*
-int main(){
+int	main(void){
 	printf("ft_memmove\n");
-        unsigned char tab[] = "hejhgsdajgjgsdakgsdall";
-        unsigned char dest = tab[1];
-        unsigned char src = tab[5];
-        size_t size = 12;
-        ft_memmove(&dest, &src, size);
-        printf("%s\n", &tab[0]);
+		unsigned char tab[] = "hejhgsdajgjgsdakgsdall";
+		unsigned char dest = tab[1];
+		unsigned char src = tab[5];
+		size_t size = 12;
+		ft_memmove(&dest, &src, size);
+		printf("%s\n", &tab[0]);
 
-        printf("memmove\n");
-        unsigned char tab1[] = "hello";
-        unsigned char dest1 = tab1[3];
-        unsigned char src1 = tab1[1];
-        ft_memmove(&dest1, &src1, size);
-        printf("%s\n", &tab[0]);
+		printf("memmove\n");
+		unsigned char tab1[] = "hello";
+		unsigned char dest1 = tab1[3];
+		unsigned char src1 = tab1[1];
+		ft_memmove(&dest1, &src1, size);
+		printf("%s\n", &tab[0]);
 }
 */

@@ -10,20 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void *ft_memchr(const void *s, int c, size_t n){
-	int i;
 
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	int	i;
+	int	sii;
+
+	sii = n;
 	i = 0;
-	while(((char *)s)[i] != c && i <= n){
+	while (((char *)s)[i] != c && i <= sii)
+	{
 		i++;
 	}
 	if (((char *)s)[i] == c)
 		return (&((char *)s)[i]);
 	else
-		return(NULL);
+		return (NULL);
 }
 /*
-int main(){
+int	main(void){
 	char s[12] = "lorem ipsum";
 	printf("%uz\n", ft_memchr(s, 'm', 15));
 }

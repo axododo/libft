@@ -11,35 +11,38 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
-{
-  int len;
-  int i;
-  int j;
 
-  len = 0;
-  i = 0;
-  j = 0;
-  while (dst[i])
-  {
-    i++;
-  }
-  while (src[j])
-  {
-    j++;
-  }
-  if (size <= i)
-    return(size + j);
-  while (src[len] && i + len < size - 1)
-  {
-    dst[i + len] = src[len];
-    len++;
-  }
-   dst[i + len] = '\0';
-   return(i + len);
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	int	len;
+	int	i;
+	int	j;
+	int	sii;
+
+	sii = size;
+	len = 0;
+	i = 0;
+	j = 0;
+	while (dst[i])
+	{
+		i++;
+	}
+	while (src[j])
+	{
+		j++;
+	}
+	if (sii <= i)
+		return (sii + j);
+	while (src[len] && i + len < sii - 1)
+	{
+		dst[i + len] = src[len];
+		len++;
+	}
+	dst[i + len] = '\0';
+	return (i + len);
 }
 /*
-int main() {
+int	main(void) {
   char dest[3] = "hel";
   char src[15] = " world";
   char dest1[3] = "hel";
@@ -49,6 +52,6 @@ int main() {
   printf("tr _ > %zu\n", strlcat(dest1, src1, 2));
 
   printf("tr -> %s\n", dest1);
-  return 0;
+  return (0);
 }
 */

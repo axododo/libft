@@ -10,25 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-char *ft_strchr(const char *s, int c){
-	int i;
-	int j;
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+	int	j;
 
 	j = 0;
 	i = 0;
-	while(s[j]){
+	while (s[j])
+	{
 		j++;
 	}
-	while(s[i] != c && i <= j){
+	while (s[i] != c && i <= j)
+	{
 		i++;
 	}
 	if (s[i] == c)
 		return (&((char *)s)[i]);
 	else
-		return(NULL);
+		return (NULL);
 }
 /*
-int main(){
+int	main(void){
 	printf("%s", ft_strchr("helloo", 'a'));
 	printf("%s", strchr("helloo", 'a'));
 }

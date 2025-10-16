@@ -10,22 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void *ft_bzero(void *s, size_t n){
-	int i;
-	char unsigned *str;
-	int j;
+
+void	*ft_bzero(void *s, size_t n)
+{
+	int				i;
+	char unsigned	*str;
+	int				j;
 
 	j = n;
 	i = 0;
-	str = (unsigned char*)s;
-	while(i <= j){
+	str = (unsigned char *)s;
+	while (i <= j)
+	{
 		str[i] = '\0';
 		i++;
 	}
-	return(s);
+	return (s);
 }
 /*
-int main(){
+int	main(void){
 	char s[11] = "heo world";
 	char c[11] = "hola mundo";
 	printf("%s\n", s);
