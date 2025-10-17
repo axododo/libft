@@ -39,7 +39,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		len++;
 	}
 	dst[i + len] = '\0';
-	return (i + len);
+	return (i + j);
 }
 /*
 int	main(void) {
