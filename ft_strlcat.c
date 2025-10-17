@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	len;
-	int	i;
-	int	j;
-	int	sii;
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	size_t	sii;
 
 	sii = size;
 	len = 0;
@@ -43,6 +43,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 }
 /*
 int	main(void) {
+
   char dest[3] = "hel";
   char src[15] = " world";
   char dest1[3] = "hel";

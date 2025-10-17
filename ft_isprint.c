@@ -13,10 +13,16 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 	{
 		return (16384);
 	}
 	else
 		return (0);
 }
+/*
+int	main(void) {
+	printf("%i\n",ft_isprint(127));
+	return (0);
+}
+*/
