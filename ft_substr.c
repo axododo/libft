@@ -19,8 +19,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len){
   str[j] = '\0';
   return (str);
 }
-
+/*
 int main() {
   printf("%s\n", ft_substr("i just want this part #############", 5, 20));
   return 0;
 }
+*/

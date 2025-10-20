@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:41:09 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/16 14:41:11 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/20 17:51:35 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -42,8 +43,8 @@ int	main(void) {
   char dest[10];
   char src1[10] = "hello";
   char dest1[10];
-  printf("%i\n",ft_strlcpy(dest, src, sizeof(dest)));
-  printf("%i\n", strlcpy(dest1, src1, sizeof(dest1)));
+  printf("%zu\n",ft_strlcpy(dest, src, 0));
+  printf("%zu\n", strlcpy(dest1, src1, 0));
   printf("%s\n", dest);
   printf("%s\n", dest1);
   return (0);
