@@ -27,7 +27,6 @@ char	**ft_split(const char *s, char c)
 		i++;
 	}
 	str1[j][k] = '\0';
-	str1[j + 1] = NULL;
 	return (str1);
 }
 
@@ -37,7 +36,7 @@ int	main(void)
 	char	**tab;
 
 	i = 0;
-	tab = ft_split("hello world", ' ');
+  tab = ft_split("lorem ipsum dolore", ' ');
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);

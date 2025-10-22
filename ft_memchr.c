@@ -30,6 +30,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /*
 int	main(void){
 	char s[12] = "lorem ipsum";
-	printf("%uz\n", ft_memchr(s, 'm', 15));
+	char s1[12] = "lorem ipsum";
+
+	printf("%c\n", ft_memchr(s, 'l', 10));
+	printf("%c\n", memchr(s1, 'l', 10));
+
 }
 */
