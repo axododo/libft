@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:40:51 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 18:40:56 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 21:27:07 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putstr_fd(char *str, int fd)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		write(1, &str[i], 1);
+		write(fd, &str[i], 1);
 		i++;
 	}
 }

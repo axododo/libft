@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:42:02 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 18:42:14 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 21:27:13 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putnbr(int nb)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	char	c;
 
@@ -27,5 +27,5 @@ void	ft_putnbr(int nb)
 	if (nb >= 10)
 		ft_putnbr(nb / 10);
 	c = nb % 10 + '0';
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }
