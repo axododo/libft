@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:37:42 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 14:37:47 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:42:57 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*ft_strrchr(const char *s, int c);

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:13:55 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/14 11:13:57 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:08:18 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -22,6 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	j = n;
 	des = (unsigned char *)dest;
 	sr = (unsigned char *)src;
+	if(!des && !sr)
+		return(NULL);
 	while (i < j)
 	{
 		des[i] = sr[i];
@@ -32,9 +35,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int	main(void){
 	char src[12] = "hello zorld";
-	memcpy(&src[3], &src[4], 5);
-	printf("%s\n", src);
-	ft_memcpy(&src[3], &src[4], 5);
-	printf("%s\n", src);
+	memcpy(((void*)0), ((void*)0), 3);
+	//printf("%s\n", src);
+	//ft_memcpy(((void*)0), ((void*)0), 3);
+	//printf("%s\n", src);
 }
+
 */

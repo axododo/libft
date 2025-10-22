@@ -6,10 +6,11 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:36:58 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 15:25:23 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:41:11 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -66,3 +67,4 @@ int	main(void)
 	}
 	free(tab);
 }
+*/
