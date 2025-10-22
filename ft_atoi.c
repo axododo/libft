@@ -1,17 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:36:47 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 14:36:49 by mguilber         ###   ########.fr       */
+/*   Created: 2025/10/22 14:36:20 by mguilber          #+#    #+#             */
+/*   Updated: 2025/10/22 14:36:23 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	signe;
+	int	nb;
 
-char *ft_itoa(int n){
-  char *str;
+	signe = 1;
+	i = 0;
+	nb = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			signe *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb *= 10;
+		nb += str[i] - '0';
+		i++;
+	}
+	return (nb * signe);
 }
