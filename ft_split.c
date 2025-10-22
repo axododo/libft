@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:36:58 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 14:37:01 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:25:23 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+int count_letters(char *s){
+	int i = 0;
+}
+
+int count_words(char *s){
+	int i = 0;
+	
+}
 
 char	**ft_split(const char *s, char c)
 {
@@ -20,7 +29,7 @@ char	**ft_split(const char *s, char c)
 	int		j;
 	int		k;
 
-	str1 = malloc(sizeof(char *) * 100);
+	str1 = malloc(sizeof(char *) * (count_words(s) + 1));
 	i = 0;
 	j = 0;
 	k = 0;
@@ -39,6 +48,7 @@ char	**ft_split(const char *s, char c)
 		i++;
 	}
 	str1[j][k] = '\0';
+	str1[j] = NULL;
 	return (str1);
 }
 
@@ -48,7 +58,7 @@ int	main(void)
 	char	**tab;
 
 	i = 0;
-  tab = ft_split("lorem ipsum dolore", ' ');
+  tab = ft_split("lorem ipsum dolore", '\0');
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
