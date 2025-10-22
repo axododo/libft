@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:37:42 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 15:42:57 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:26:13 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s1, char const *set);
 char **ft_split(const char *s, char c);
+char	*ft_strnstr(char *big, char *little, size_t len);
 #endif

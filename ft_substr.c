@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:36:02 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 14:36:04 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:59:14 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	max = len;
-	str = malloc(max - i);
+	str = malloc(max + 1 * sizeof(char *));
+	if (!str)
+		return (NULL);
 	j = 0;
 	while (i < max)
 	{
