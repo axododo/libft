@@ -51,10 +51,13 @@ char	*word_dup(const char *s, int start, int end)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		i = 0, j;
+	int		i;
+	int start;
+	int j;
 
-	i = 0, j = 0, start;
-	i = 0, j = 0, start = -1;
+	i = 0;
+	j = 0;
+	start = -1;
 	if (!s)
 		return (NULL);
 	res = malloc((word_count(s, c) + 1) * sizeof(char *));
@@ -77,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	res[j] = NULL;
 	return (res);
 }
-
+/*
 int	main(void)
 {
 	int		i;
@@ -93,3 +96,4 @@ int	main(void)
 	}
 	free(tab);
 }
+*/
