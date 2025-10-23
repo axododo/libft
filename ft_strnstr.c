@@ -11,25 +11,31 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strnstr(char *big, char *little, size_t len){
-	int	i;
-	j = 0;
-	while(big[i]){
-		while(big[i] != little[j]){
-			i++;
-			while(little[j] == big[i]){
-				j++;
-				i++;
-				if(little[j])
-					return(&big[i - j]);
-			}
-			j = 0;
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	if (!*little) // Si little est vide, on retourne big
+		return ((char *)big);
+	i = 0;
+	while (i < len && big[i])
+	{
+		j = 0;
+		while (i + j < len && big[i + j] && little[j] && big[i
+			+ j] == little[j])
+		{
+			j++;
 		}
+		if (little[j] == '\0') // fin de little atteinte => match trouvé
+			return ((char *)&big[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
+
 /*
-int main(){
+int	main(void){
 	printf("%s", ft_strnstr("lorem ipsum dolor", "llorem ispum", 15));
 }*/

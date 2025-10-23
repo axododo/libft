@@ -10,47 +10,72 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int count_letters(char *s){
-	int i = 0;
-}
-
-int count_words(char *s){
-	int i = 0;
-	
-}
-
-char	**ft_split(const char *s, char c)
+int	word_count(const char *s, char c)
 {
-	char	**str1;
-	int		i;
-	int		j;
-	int		k;
+	int	count;
+	int	in_word;
 
-	str1 = malloc(sizeof(char *) * (count_words(s) + 1));
+	count = 0;
+	in_word = 0;
+	while (*s)
+	{
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
+	}
+	return (count);
+}
+
+char	*word_dup(const char *s, int start, int end)
+{
+	char	*word;
+	int		i;
+
 	i = 0;
-	j = 0;
-	k = 0;
-	str1[j] = malloc(54575);
+	word = malloc(end - start + 1);
+	if (!word)
+		return (NULL);
+	while (start < end)
+		word[i++] = s[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+	int		i = 0, j;
+
+	i = 0, j = 0, start;
+	i = 0, j = 0, start = -1;
+	if (!s)
+		return (NULL);
+	res = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c && start == -1)
+			start = i;
+		else if ((s[i] == c || s[i + 1] == '\0') && start != -1)
 		{
-			str1[j][k] = '\0';
-			j++;
-			k = 0;
-			str1[j] = malloc(54575);
+			if (s[i] == c)
+				res[j++] = word_dup(s, start, i);
+			else
+				res[j++] = word_dup(s, start, i + 1);
+			start = -1;
 		}
-		else
-			str1[j][k++] = s[i];
 		i++;
 	}
-	str1[j][k] = '\0';
-	str1[j] = NULL;
-	return (str1);
+	res[j] = NULL;
+	return (res);
 }
 
 int	main(void)
@@ -59,12 +84,12 @@ int	main(void)
 	char	**tab;
 
 	i = 0;
-  tab = ft_split("lorem ipsum dolore", '\0');
+	tab = ft_split("lorem ipsum dolore", ' ');
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
+		free(tab[i]);
 		i++;
 	}
 	free(tab);
 }
-*/

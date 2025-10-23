@@ -12,33 +12,29 @@
 
 #include "libft.h"
 
-
-
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    unsigned char    *result;
+	unsigned char	*result;
 
-    if (nmemb == 0 || size == 0)
-    {
-        result = malloc(0);
-        if (!result)
-            return (NULL);
-        return ((void *)result);
-    }
+	if (nmemb == 0 || size == 0)
+	{
+		result = malloc(1);
+		if (!result)
+			return (NULL);
+		return ((void *)result);
+	}
 	if (size != 0 && nmemb != 0 && (nmemb * size) / size != nmemb)
-        return (NULL);
-    result = malloc(nmemb * size);
-    if (!result)
-        return (NULL);
-    ft_bzero(result, nmemb * size);
-    return (result);
+		return (NULL);
+	result = malloc(nmemb * size);
+	if (!result)
+		return (NULL);
+	ft_bzero(result, nmemb * size);
+	return (result);
 }
-
 
 /*
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	
 	void	*p;
 
 	if(nmemb == 0 || size == 0){

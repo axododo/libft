@@ -23,8 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	j = n;
 	des = (unsigned char *)dest;
 	sr = (unsigned char *)src;
-	if(!des && !sr)
-		return(NULL);
+	if (!des && !sr)
+		return (NULL);
 	while (i < j)
 	{
 		des[i] = sr[i];
