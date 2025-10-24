@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:36:02 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 18:59:14 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:49:43 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		max;
+	size_t		max;
 	char	*str;
-	int		j;
+	size_t		j;
 
-	i = start;
-	max = len;
-	str = malloc(max + 1 * sizeof(char *));
+	max = ft_strlen(s) - start;
+	if (start > ft_strlen(s)){
+		str = malloc(1);
+		if (!str)
+			return(NULL);
+		str[0] = '\0';
+		return(str);
+	}
+	if(max > len){
+		max = len;
+	}
+	str = malloc(sizeof(char) * (max + 1));
 	if (!str)
 		return (NULL);
 	j = 0;
-	while (i < max)
+	while (j < max)
 	{
-		str[j] = s[i];
-		i++;
+		str[j] = s[start];
+		start++;
 		j++;
 	}
 	str[j] = '\0';
@@ -36,7 +44,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 /*
 int	main(void) {
-  printf("%s\n", ft_substr("i just want this part #############", 5, 20));
-  return (0);
-}
-*/
+        printf("%s", ft_substr("lorem ipsum dolor" , 7, 10));
+
+}*/

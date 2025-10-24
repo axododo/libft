@@ -1,84 +1,46 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:36:58 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 15:41:11 by mguilber         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "libft.h"
-
-int	word_count(const char *s, char c)
+int	ft_strlen(char *str)
 {
-	int	count;
-	int	in_word;
-
-	count = 0;
-	in_word = 0;
-	while (*s)
-	{
-		if (*s != c && !in_word)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
-	}
-	return (count);
-}
-
-char	*word_dup(const char *s, int start, int end)
-{
-	char	*word;
-	int		i;
+	int	i;
 
 	i = 0;
-	word = malloc(end - start + 1);
-	if (!word)
-		return (NULL);
-	while (start < end)
-		word[i++] = s[start++];
-	word[i] = '\0';
-	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**res;
-	int		i;
-	int		start;
-	int		j;
-
-	i = 0;
-	j = 0;
-	start = -1;
-	if (!s)
-		return (NULL);
-	res = malloc((word_count(s, c) + 1) * sizeof(char *));
-	if (!res)
-		return (NULL);
-	while (s[i])
+	while (str[i] != '\0')
 	{
-		if (s[i] != c && start == -1)
-			start = i;
-		else if ((s[i] == c || s[i + 1] == '\0') && start != -1)
-		{
-			if (s[i] == c)
-				res[j++] = word_dup(s, start, i);
-			else
-				res[j++] = word_dup(s, start, i + 1);
-			start = -1;
-		}
 		i++;
 	}
-	res[j] = NULL;
-	return (res);
+	return (i);
+}
+
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str1;
+	int		i;
+	int		j;
+	int		k;
+
+	str1 = malloc(sizeof(char *) * 100);
+	i = 0;
+	j = 0;
+	k = 0;
+	str1[j] = malloc(54575);
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			str1[j][k] = '\0';
+			j++;
+			k = 0;
+			str1[j] = malloc(54575);
+		}
+		else
+			str1[j][k++] = s[i];
+		i++;
+	}
+	str1[j][k] = '\0';
+	return (str1);
 }
 /*
 int	main(void)
@@ -87,13 +49,11 @@ int	main(void)
 	char	**tab;
 
 	i = 0;
-	tab = ft_split("lorem ipsum dolore", ' ');
+  tab = ft_split("lorem ipsum dolore", ' ');
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
-		free(tab[i]);
 		i++;
 	}
 	free(tab);
-}
-*/
+}*/
