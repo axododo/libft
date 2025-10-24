@@ -50,5 +50,6 @@ char	*ft_strnstr(char const *big, char const *little, size_t len);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_atoi(const char *nptr);
 
 #endif

@@ -52,8 +52,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	int		i;
-	int start;
-	int j;
+	int		start;
+	int		j;
 
 	i = 0;
 	j = 0;

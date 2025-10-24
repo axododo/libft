@@ -17,18 +17,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!*little) // Si little est vide, on retourne big
+	if (!*little)
 		return ((char *)big);
 	i = 0;
 	while (i < len && big[i])
 	{
 		j = 0;
-		while (i + j < len && big[i + j] && little[j] && big[i
-			+ j] == little[j])
+		while (i + j < len && big[i + j] && little[j]
+			&& big[i + j] == little[j])
 		{
 			j++;
 		}
-		if (little[j] == '\0') // fin de little atteinte => match trouvé
+		if (little[j] == '\0')
 			return ((char *)&big[i]);
 		i++;
 	}
