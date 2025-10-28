@@ -1,86 +1,110 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 14:55:55 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/28 15:27:34 by mguilber         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_strlencc(char const *str, char c, int i)
-{	int j = 0;
-	while (str[i] != '\0' && str[i] != c)
-	{
-		i++;
-		j++;
-	}
-	return (j);
-}
-
-
-size_t countv(char const *str, char c){
-	int i = 0;
-	int j = 0;
-	while(str[i]){
-		if (str[i] == c)
-			j++;
-	i++;
- }
- return(j);
-}
-
-char	**ft_split(const char *s, char c)
+size_t    ft_array_nbr(char const *s, char c)
 {
-	char	**str1;
-	int		i;
-	int		j;
-	int		k;
+    size_t    i;
+    size_t    count;
 
-	
-	i = 0;
-	j = 0;
-	k = 0;
-
-	if ( ft_strlen(s) == countv((const char *)s, c))
-		return(0);
-	str1 = malloc(sizeof(char *) * countv(s, c) + 1);
-	if(!str1)
-		return(0);
-	str1[j] = malloc(sizeof(char *) * ft_strlencc(s, c, i));
-	while (s[i])
-	{
-		if (s[i] == c && s[i] != '\0')
-		{
-			str1[j][k] = '\0';
-			j++;
-			k = 0;
-			str1[j] = malloc(sizeof(char *) * ft_strlencc(s, c, i));
-		}
-		else
-			str1[j][k++] = s[i];
-		i++;
-	}
-	str1[j][k] = '\0';
-	str1[j + 1]= NULL;
-	return (str1);
+    count = 0;
+    i = 1;
+    if (s == 0)
+        return (0);
+    if (c == 0)
+        return (1);
+        
+    if (s[0] != c)
+        count++;
+            
+    
+    while (s[i])
+    {
+        if ((s[i] != c && s[i - 1] == c) || (i == 0))
+            count++;
+        i++;
+    }
+    return (count);
 }
 
-int	main(void)
+size_t    ft_array_len(char const *s, char c)
 {
-	int		i;
-	char	**tab;
+    size_t    i;
+    
+    i = 0;
+    while (*s == c)
+        s++;
 
-	i = 0;
-  tab = ft_split("           ", ' ');
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	free(tab);
+    while (s[i] != c && s[i])
+    {
+        i++;
+    }
+    return (i);
 }
+
+char    *ft_str_copy(char const *s, char *str, char c)
+{
+    size_t    i;
+
+    i = 0;
+    while (s[i] != c && s[i])
+    {
+        str[i] = s[i];
+        i++;
+    }
+    str[i] = '\0';
+    return (str);
+}
+
+void    free_memory(char **s)
+{
+    int i;
+    
+    i = 0;
+    while (s[i])
+    {
+        free(s[i]);
+        i++;
+    }
+    free(s);
+}
+
+char    **ft_split(char const *s, char c)
+{
+    size_t    i;
+    size_t    j;
+    char    **resu;
+
+    j = 0;
+    i = 0;
+    resu = malloc(sizeof(char *) * (ft_array_nbr(s, c) + 1));
+    if (!resu)
+        return (NULL);
+    while (s[i])
+    {
+        if ((i == 0 && s[0] != c) || (s[i - 1] == c && s[i] != c))
+        {
+            resu[j] = malloc(ft_array_len(&s[i], c) + 1);
+            if (!resu[j])
+            {
+                free_memory(resu);
+                return (0);
+            }
+            ft_str_copy(&s[i], resu[j], c);
+            j++;
+        }
+        i++;
+    }
+    resu[j] = NULL;
+    return (resu);
+}
+/*
+#include <stdio.h>
+int main()
+{
+    char    **resu = ft_split("  Bomjou   rf   ", ' ');
+    size_t    i = 0;
+    while (resu[i])
+    {
+        printf("%s\n", resu[i]);
+        i++;
+    }
+}*/
