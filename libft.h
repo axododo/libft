@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:37:42 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 21:27:26 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:43:05 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *nptr);
+char    *ft_itoa(int n);
 
 #endif

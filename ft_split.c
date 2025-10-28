@@ -1,18 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/28 14:55:55 by mguilber          #+#    #+#             */
+/*   Updated: 2025/10/28 15:27:34 by mguilber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
+int	ft_strlencc(char const *str, char c, int i)
+{	int j = 0;
+	while (str[i] != '\0' && str[i] != c)
 	{
 		i++;
+		j++;
 	}
-	return (i);
+	return (j);
 }
 
+
+size_t countv(char const *str, char c){
+	int i = 0;
+	int j = 0;
+	while(str[i]){
+		if (str[i] == c)
+			j++;
+	i++;
+ }
+ return(j);
+}
 
 char	**ft_split(const char *s, char c)
 {
@@ -21,39 +41,46 @@ char	**ft_split(const char *s, char c)
 	int		j;
 	int		k;
 
-	str1 = malloc(sizeof(char *) * 100);
+	
 	i = 0;
 	j = 0;
 	k = 0;
-	str1[j] = malloc(54575);
+
+	if ( ft_strlen(s) == countv((const char *)s, c))
+		return(0);
+	str1 = malloc(sizeof(char *) * countv(s, c) + 1);
+	if(!str1)
+		return(0);
+	str1[j] = malloc(sizeof(char *) * ft_strlencc(s, c, i));
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i] != '\0')
 		{
 			str1[j][k] = '\0';
 			j++;
 			k = 0;
-			str1[j] = malloc(54575);
+			str1[j] = malloc(sizeof(char *) * ft_strlencc(s, c, i));
 		}
 		else
 			str1[j][k++] = s[i];
 		i++;
 	}
 	str1[j][k] = '\0';
+	str1[j + 1]= NULL;
 	return (str1);
 }
-/*
+
 int	main(void)
 {
 	int		i;
 	char	**tab;
 
 	i = 0;
-  tab = ft_split("lorem ipsum dolore", ' ');
+  tab = ft_split("           ", ' ');
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
 		i++;
 	}
 	free(tab);
-}*/
+}
