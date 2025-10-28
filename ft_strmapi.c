@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:36:47 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/28 14:14:48 by mguilber         ###   ########.fr       */
+/*   Created: 2025/10/28 14:10:15 by mguilber          #+#    #+#             */
+/*   Updated: 2025/10/28 14:13:12 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
-{
-	char	*str;
-	
+char ft_strmapi(char const *s, char (*f)(unsigned int, char)){
+    
 }
