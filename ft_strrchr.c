@@ -13,25 +13,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	cc;
+	char	*last;
 
 	i = 0;
+	cc = (char)c;
+	last = NULL;
 	while (s[i])
 	{
+		if (s[i] == cc)
+			last = (char *)&s[i];
 		i++;
 	}
-	while (s[i] != c && i >= 0)
-	{
-		i--;
-	}
-	if (s[i] == c)
-		return (&((char *)s)[i]);
-	else
-		return (NULL);
+	if (cc == '\0')
+		return ((char *)&s[i]);
+	return (last);
 }
-/*
-int	main(void){
-	printf("%s\n", ft_strrchr("helloo", 'a'));
-	printf("%s", strrchr("helloo", 'a'));
-}
-*/

@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	s3 = malloc(sizeof(s1) + sizeof(s2));
+	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!s3)
 		return (NULL);
 	while (s1[i])
@@ -39,9 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[i] = '\0';
 	return (s3);
 }
-/*
-int	main(void) {
-  printf("%s", ft_strjoin("hello", "world"));
-  return (0);
-}
-*/

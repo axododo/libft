@@ -77,18 +77,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[v] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-char	*s1 = "  \t \t \n bonjour  \n\n\n\t";
-	char *s2 = "bonjour";
-	char *ret = ft_strtrim(s1, " \n\t");
-
-	if (!strcmp(ret, s2))
-		printf("suuces");
-	printf("connard");
- return(0);
-
-}*/

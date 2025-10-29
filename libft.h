@@ -52,5 +52,8 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putendl_fd(char *s, int fd);
 
 #endif

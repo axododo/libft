@@ -100,9 +100,9 @@ char	*ft_int_to_char(int n, char *resu)
 
 char	*ft_itoa(int n)
 {
-	char *resu;
-	char *copy;
-	size_t i;
+	char	*resu;
+	char	*copy;
+	size_t	i;
 
 	i = 0;
 	copy = "-2147483648";
