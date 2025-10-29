@@ -14,19 +14,21 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		max;
+	size_t	max;
 	char	*str;
-	size_t		j;
+	size_t	j;
 
 	max = ft_strlen(s) - start;
-	if (start > ft_strlen(s)){
+	if (start > ft_strlen(s))
+	{
 		str = malloc(1);
 		if (!str)
-			return(NULL);
+			return (NULL);
 		str[0] = '\0';
-		return(str);
+		return (str);
 	}
-	if(max > len){
+	if (max > len)
+	{
 		max = len;
 	}
 	str = malloc(sizeof(char) * (max + 1));
@@ -44,6 +46,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 /*
 int	main(void) {
-        printf("%s", ft_substr("lorem ipsum dolor" , 7, 10));
+		printf("%s", ft_substr("lorem ipsum dolor" , 7, 10));
 
 }*/
