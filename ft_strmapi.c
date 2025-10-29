@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:10:15 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/28 14:13:12 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:56:27 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 
 	i = 0;
+	if (!s) return(NULL);
 	str = malloc(sizeof(char *) * ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
