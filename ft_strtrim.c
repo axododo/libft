@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:37:33 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/29 16:55:31 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:53:45 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	v = 0;
-	if (!s1 || !s2) return (NULL); 
+	if (!s1)
+		return (NULL);
 	i = st((char *)s1, (char *)set, i);
 	im = end((char *)s1, (char *)set, i);
 	str = malloc(im - i + 1);

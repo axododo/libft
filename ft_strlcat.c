@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:41:01 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/16 18:33:03 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:37:22 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	len = 0;
 	i = 0;
 	j = 0;
-	while (dst[i])
-	{
-		i++;
-	}
-	while (src[j])
-	{
-		j++;
-	}
+	i = ft_strlen(dst);
+	j = ft_strlen(src);
 	if (sii <= i)
 		return (sii + j);
 	while (src[len] && i + len < sii - 1)
@@ -41,18 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + len] = '\0';
 	return (i + j);
 }
-/*
-int	main(void) {
-
-  char dest[3] = "hel";
-  char src[15] = " world";
-  char dest1[3] = "hel";
-  char src1[15] = " world";
-  printf("ft _ > %zu\n", ft_strlcat(dest, src, 2));
-  printf("ft -> %s\n", dest);
-  printf("tr _ > %zu\n", strlcat(dest1, src1, 2));
-
-  printf("tr -> %s\n", dest1);
-  return (0);
-}
-*/

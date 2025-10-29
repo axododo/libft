@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/29 17:44:41 by mguilber          #+#    #+#             */
+/*   Updated: 2025/10/29 17:53:19 by mguilber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_array_nbr(char const *s, char c)
@@ -71,7 +83,8 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	i = 0;
-	if (!s) return(NULL);
+	if (!s)
+		return (NULL);
 	resu = malloc(sizeof(char *) * (ft_array_nbr(s, c) + 1));
 	if (!resu)
 		return (NULL);
@@ -81,10 +94,7 @@ char	**ft_split(char const *s, char c)
 		{
 			resu[j] = malloc(ft_array_len(&s[i], c) + 1);
 			if (!resu[j])
-			{
 				free_memory(resu);
-				return (0);
-			}
 			ft_str_copy(&s[i], resu[j], c);
 			j++;
 		}
@@ -93,16 +103,3 @@ char	**ft_split(char const *s, char c)
 	resu[j] = NULL;
 	return (resu);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char    **resu = ft_split("  Bomjou   rf   ", ' ');
-	size_t    i = 0;
-	while (resu[i])
-	{
-		printf("%s\n", resu[i]);
-		i++;
-	}
-}*/
