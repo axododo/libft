@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:55:36 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/22 17:05:07 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:06:12 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (NULL);
 }
-/*
-int	main(void){
-	printf("%s", ft_strchr("helloo", 'z'));
-	printf("%s", strchr("helloo", 'z'));
-}
-*/

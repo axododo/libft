@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:12:46 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/14 11:12:47 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:05:42 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_isprint(int c)
 {
@@ -20,9 +20,4 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
-/*
-int	main(void) {
-	printf("%i\n",ft_isprint(127));
-	return (0);
-}
-*/
+

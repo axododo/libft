@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:41:09 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/20 17:51:35 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:06:23 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len);
 }
-/*
-int	main(void) {
-  char src[10] = "hello";
-  char dest[10];
-  char src1[10] = "hello";
-  char dest1[10];
-  printf("%zu\n",ft_strlcpy(dest, src, 0));
-  printf("%zu\n", strlcpy(dest1, src1, 0));
-  printf("%s\n", dest);
-  printf("%s\n", dest1);
-  return (0);
-}
-*/

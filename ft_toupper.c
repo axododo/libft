@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:42:52 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/16 14:42:53 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:06:40 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_toupper(int c)
 {
@@ -19,10 +19,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-/*
-int	main(void)
-{
-	printf("%c", toupper());
-	printf("%c", ft_toupper());
-}
-*/

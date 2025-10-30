@@ -6,7 +6,7 @@
 /*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:37:23 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/29 18:27:32 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:02:00 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s3[i + j] = s2[j];
 		j++;
 	}
-	s3[i] = '\0';
+	s3[i + j] = '\0';
 	return (s3);
 }

@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mguilber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mguilber <mguilber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:13:05 by mguilber          #+#    #+#             */
-/*   Updated: 2025/10/14 11:13:09 by mguilber         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:05:59 by mguilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 void	*ft_memset(void *str, int c, size_t n)
 {
@@ -27,20 +27,3 @@ void	*ft_memset(void *str, int c, size_t n)
 	}
 	return (st);
 }
-
-/*
-int	main(void) {
-  char str[12];
-  char cc[12];
-
-
-  memset(cc, 87 ,12);
-  printf("ft %s\n", cc);
-
-
-
-  ft_memset(str, 88, 12);
-  printf("%s\n", str);
-  return (0);
-}
-*/
